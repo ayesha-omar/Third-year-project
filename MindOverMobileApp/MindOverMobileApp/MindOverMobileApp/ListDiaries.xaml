@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+              xmlns:model="clr-namespace:MindOverMobileApp.Models"
+             xmlns:viewmodels="clr-namespace:MindOverMobileApp.ViewModels"
+             x:Class="MindOverMobileApp.ListDiaries"
+             x:DataType="viewmodels:ListDiariesViewModel"
+             >
+    <ContentPage.BindingContext>
+        <viewmodels:ListDiariesViewModel/>
+    </ContentPage.BindingContext>
+    <ListView CachingStrategy="RecycleElement"
+              BackgroundColor="Transparent"
+              
+              ItemsSource="{Binding Diary}"
+              HasUnevenRows="true"
+              SeparatorVisibility="None"
+              IsPullToRefreshEnabled="True"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              RefreshCommand="{Binding RefreshCommand}"
+              RefreshControlColor="green"
+              ItemSelected="ListView_ItemSelected"
+              ItemTapped="ListView_ItemTapped">
+
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="model:Diary">
+                <ViewCell >
+                    <ViewCell.ContextActions>
+                        <MenuItem Text="Favorite"/>
+                        <MenuItem Text="Edit"/>
+                        <MenuItem Text="properties"/>
+
+                    </ViewCell.ContextActions>
+                    <Grid Padding="10">
+                        <Frame CornerRadius="20"
+                               HasShadow="true">
+                            <StackLayout>
+
+                                <StackLayout >
+                                    <Label VerticalOptions="Center"
+                                     FontSize="Large"
+                                       Text="{Binding DiaryTitle}"
+                                           TextColor="Green"/>
+                                    <Label VerticalOptions="Center"
+                                       FontSize="15"
+                                       Text="{Binding DiaryDescription}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        <ListView.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="80"/>
+                </Grid.ColumnDefinitions>
+                <!--<Label Text="MYSPACE"
+                       FontSize="Large"
+                       Grid.Row="0" 
+                       Grid.Column="0" 
+                       Grid.ColumnSpan="3"
+                       BackgroundColor="Transparent"/>-->
+                <Button Text="Add New"
+                      TextColor="Green"
+                       Grid.Row="0" 
+                       Grid.Column="3" 
+                       Grid.ColumnSpan="2"
+                       CornerRadius="50"
+                       BackgroundColor="Transparent"
+                       BorderColor="DarkGreen"
+                       BorderWidth="1"
+                       Clicked="btnaddnew"/>
+            </Grid>
+        </ListView.Header>
+        <ListView.Footer>
+            <StackLayout>
+                <Label Text="Footer"/>
+            </StackLayout>
+        </ListView.Footer>
+
+    </ListView>
+
+</ContentPage>

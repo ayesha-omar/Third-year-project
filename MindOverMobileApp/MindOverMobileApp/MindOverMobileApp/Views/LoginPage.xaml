@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewmodels="clr-namespace:MindOverMobileApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="MindOverMobileApp.Views.LoginPage"
+             x:DataType="viewmodels:LoginViewModel"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="White">
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="MoM_Logo_nobg.png" BackgroundColor="white" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"/>
+        <Entry Placeholder="Student Email" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" x:Name="username"/>
+        <Entry Placeholder="Ulink Password" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" x:Name="password"/>
+        <Button Text="LogIn" Grid.Row="5" Grid.Column="1" BackgroundColor="Green"
+                Clicked="loginbtn"
+                Command="{Binding RefreshCommand}"/>
+
+        <Button Text="Forgot Password?" Grid.Row="6" Grid.Column="1"
+                Clicked="openULINK"
+                TextColor="Gray"
+                BackgroundColor="Transparent"
+               FontAttributes="Italic"/>
+
+
+    </Grid>-->
+
+
+    <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+        <Image Source="MoM_Logo_nobg.png" WidthRequest="350" HeightRequest="200" HorizontalOptions="Center"></Image>
+        <Entry x:Name="username" Placeholder="Student Email" TextColor="ForestGreen" PlaceholderColor="Gray" HorizontalOptions="Center" WidthRequest="250"></Entry>
+        <Entry x:Name="password" Placeholder="Ulink Password" TextColor="ForestGreen" PlaceholderColor="Gray" HorizontalOptions="Center" WidthRequest="250"></Entry>
+        <Button
+               VerticalOptions="Center"
+                Text="Login"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="ForestGreen"
+                BorderWidth="1.5"
+                CornerRadius="50"
+                Clicked="loginbtn"
+             HorizontalOptions="Center" WidthRequest="250"
+             Command="{Binding RefreshCommand}"/>
+
+        <Button Text="Forgot Password?" Grid.Row="6" Grid.Column="1"
+                Clicked="openULINK"
+                TextColor="Gray"
+                BackgroundColor="Transparent"
+               FontAttributes="Italic"/>
+        
+    </StackLayout>
+</ContentPage>

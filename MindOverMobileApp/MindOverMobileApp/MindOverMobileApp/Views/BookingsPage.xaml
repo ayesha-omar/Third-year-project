@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            
+             xmlns:viewmodels="clr-namespace:MindOverMobileApp.ViewModels"
+             x:Class="MindOverMobileApp.Views.BookingsPage"
+             x:DataType="viewmodels:BookingsViewModel"
+             xmlns:model="clr-namespace:MindOverMobileApp.Models">
+    <ContentPage.BindingContext>
+        <viewmodels:BookingsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Transparent">
+
+            <!--<Switch x:Name="weekview" 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                    IsToggled="False"
+                    Toggled="weekview_Toggled"/>-->
+
+            <!--<controls:Calendar Padding="10,0,10,0"   
+                   SelectedBorderWidth="4"   
+                   DisabledBorderColor="Black"  
+                   ShowNumberOfWeek="false"  
+                   StartDay="Monday"  
+                               HeightRequest="500"
+                   TitleLabelTextColor="Purple"  
+                   TitleLeftArrowTextColor="Blue"  
+                   SelectedDate="{Binding Date}"  
+                   SpecialDates="{Binding Attendances}" 
+                   DateCommand="{Binding DateChosen, Mode=TwoWay}"
+                   SelectedBackgroundColor="LawnGreen"
+                   DateClicked="Calendar_DateClicked"
+                   x:Name="mycalender"
+                   SelectedFontSize="10"
+                   EnableTitleMonthYearView="False"/>-->
+            <Grid>
+                <!---->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="410"/>
+                    <RowDefinition Height="90"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--cell for changing view between previous bookings Upcoming bookings-->
+                <Frame Grid.Column="0" Grid.Row="2" CornerRadius="40" Grid.ColumnSpan="2" VerticalOptions="Center" BackgroundColor="Transparent" BorderColor="DarkGreen">
+                    <Label VerticalOptions="Center"
+                                     FontSize="Medium"
+                                       Text="                   View Previous Bookings"
+                           TextColor="DarkGreen"
+                           x:Name="switchviewbutton"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SwitchView"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <!--Include the add new booking button at the bottom of the page-->
+                <Frame Grid.Column="1" Grid.Row="0" CornerRadius="40" VerticalOptions="Center" BackgroundColor="Transparent" x:Name="addnewcell" BorderColor="DarkGreen">
+                    <Label VerticalOptions="Center"
+                                     FontSize="Medium"
+                                       Text="Add new"
+                           
+                           TextColor="DarkGreen"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AddNewBooking"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                
+                <!--creating a scheduler-->
+              <ListView CachingStrategy="RecycleElement" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+              BackgroundColor="White"
+              ItemsSource="{Binding BookedSession}"
+              HasUnevenRows="true"
+              SeparatorVisibility="None"
+              IsPullToRefreshEnabled="True"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              RefreshCommand="{Binding RefreshCommand}"
+              RefreshControlColor="green"
+              ItemSelected="ListView_ItemSelected"
+              ItemTapped="ListView_ItemTapped"
+                      x:Name="currentbookings"
+                          SeparatorColor="White">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="model:BookedSession">
+                            <ViewCell >
+                                <ViewCell.ContextActions>
+                                    <!--long press will show the edit booking option-->
+                                    <MenuItem Text="Edit Booking" Clicked="EditBooking_Clicked"/>
+
+
+                                </ViewCell.ContextActions>
+                                <Grid Padding="10">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame CornerRadius="20"
+                               HasShadow="true" Grid.Column="0" Grid.Row="0"  IsEnabled="false" x:Name="bookinfo">
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label VerticalOptions="Center"
+                                       FontSize="Medium"
+                                       TextColor="Green"
+                                       Text="{Binding date}"/>
+
+                                        </StackLayout>
+
+                                    </Frame>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.Header>
+                        <StackLayout>
+                            <Label Text="Upcoming Sessions"
+                                   FontSize="Large"/>
+                        </StackLayout>
+                    </ListView.Header>
+
+                </ListView>
+
+              <ListView CachingStrategy="RecycleElement" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+              BackgroundColor="GhostWhite"
+              ItemsSource="{Binding PreviousBookings}"
+              HasUnevenRows="true"
+              SeparatorVisibility="None"
+              IsPullToRefreshEnabled="True"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              RefreshCommand="{Binding RefreshCommand}"
+              RefreshControlColor="green"
+              ItemSelected="ListView_ItemSelected"
+              ItemTapped="ListView_ItemTapped"
+                     SeparatorColor="White" IsVisible="false"
+                          x:Name="previousBookings">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="model:PreviousBookings">
+                            <ViewCell >
+                                <Grid Padding="10">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame CornerRadius="20"
+                               HasShadow="true" Grid.Column="0" Grid.Row="0"  IsEnabled="false"
+                                           BackgroundColor="LightGray">
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label VerticalOptions="Center"
+                                       FontSize="Medium"
+                                       TextColor="Green"
+                                       Text="{Binding date}"/>
+
+                                        </StackLayout>
+
+                                    </Frame>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.Header>
+                        <StackLayout>
+                            <Label Text="Previous Sessions"
+                                   FontSize="Large"/>
+                        </StackLayout>
+                    </ListView.Header>
+
+                </ListView>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

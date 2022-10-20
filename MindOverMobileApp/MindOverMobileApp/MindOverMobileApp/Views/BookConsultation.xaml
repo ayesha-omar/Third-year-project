@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:MindOverMobileApp.ViewModels"
+             
+             xmlns:model="clr-namespace:MindOverMobileApp.Models" 
+             xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+             x:Class="MindOverMobileApp.Views.BookConsultation"
+             x:DataType="viewmodels:BookConsultationViewModel">
+    <ContentPage.BindingContext>
+        <viewmodels:BookConsultationViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Make a New Booking"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                   x:Name="makeanewbooking"/>
+
+            <controls:Calendar 
+                   x:Name="bookcalendar"
+                   Padding="10,0,10,0"   
+                   SelectedBorderWidth="2"   
+                   DisabledBorderColor="GhostWhite"
+                   DisabledBackgroundColor="GhostWhite"
+                   DisabledTextColor="gray"
+                   ShowNumberOfWeek="false"  
+                   StartDay="Monday"  
+                   MinDate="{Binding TodaysDate}"
+                   VerticalOptions="FillAndExpand"
+                   HeightRequest="500"
+                   TitleLabelTextColor="Black"  
+                   TitleLeftArrowTextColor="Black"  
+                   SelectedBackgroundColor="MediumSeaGreen"
+                   SelectedBorderColor="LightGray"
+                    SelectedTextColor="DimGray"
+                   DateClicked="mycalender_DateClicked"
+                   SelectedFontSize="20"
+                   EnableTitleMonthYearView="False"
+                   MultiSelectDates="True"
+                   SpecialDates="{Binding Date}"/>
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <!--ListView for dates-->
+                <!-- <ListView CachingStrategy="RecycleElement"
+              Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1"
+              BackgroundColor="WhiteSmoke"
+              ItemsSource="{Binding AvailableDatesAndTimes}"
+              HasUnevenRows="true"
+              SeparatorVisibility="None"
+              IsPullToRefreshEnabled="True"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              RefreshCommand="{Binding RefreshCommand}"
+              RefreshControlColor="green"
+              ItemSelected="ListView_ItemSelected"
+              ItemTapped="ListView_ItemTapped">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="model:AvailableDatesAndTimes">
+                            <ViewCell >
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Favorite"/>
+                                    <MenuItem Text="Edit"/>
+                                    <MenuItem Text="properties"/>
+
+                                </ViewCell.ContextActions>
+                                <Grid Padding="10">
+                                    <Frame CornerRadius="20"
+                               HasShadow="true">
+                                        <StackLayout>
+
+                                            <StackLayout >
+                                                <Label VerticalOptions="Center"
+                                     FontSize="Large"
+                                       Text="{Binding date}"
+                                                       TextColor="Green"/>
+                                                <Label VerticalOptions="Center"
+                                       FontSize="10"
+                                       Text="check available dates"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Header>
+                        <StackLayout>
+                            <Label Text="Available Slots:"
+                                   FontSize="Small"/>
+                        </StackLayout>
+                    </ListView.Header>
+
+                </ListView>-->
+
+                <!--ListView for available times-->
+                <!-- <ListView CachingStrategy="RecycleElement"
+              x:Name="timeslot"
+              Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+              BackgroundColor="LightCoral"
+              ItemsSource="{Binding AvailableTimesOnly}"
+              HasUnevenRows="true"
+              SeparatorVisibility="None"
+              IsPullToRefreshEnabled="True"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              RefreshCommand="{Binding RefreshCommand}"
+              RefreshControlColor="green"
+              ItemSelected="timechosen_selected"
+              ItemTapped="timechosen_tapped">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="model:AvailableTimesOnly">
+                            <ViewCell >
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Favorite"/>
+                                    <MenuItem Text="Edit"/>
+                                    <MenuItem Text="properties"/>
+
+                                </ViewCell.ContextActions>
+                                <Grid Padding="10">
+                                    <Frame CornerRadius="20"
+                               HasShadow="true">
+                                        <StackLayout>
+
+                                            <StackLayout >
+                                                <Label VerticalOptions="Center"
+                                     FontSize="Large"
+                                       Text="{Binding time}"/>
+                                                <Label VerticalOptions="Center"
+                                       FontSize="15"
+                                       Text=" ME ME"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+
+                </ListView>-->
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

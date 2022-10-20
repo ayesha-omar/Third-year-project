@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MindOverMobileApp.Views.Home"
+             BackgroundColor="White">
+
+    <StackLayout>
+
+        <!--<Label Padding="0" Text="Mind over Matter" TextColor="#7ABD9A" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Title"></Label>-->
+        <Image Source="MoM_Logo_nobg.png"/>
+
+        <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*" Padding="10">
+
+            <Frame CornerRadius="20"  BorderColor="Black" Grid.Row="0" Grid.Column="0">
+                <Image
+                         Source="calendar64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BookingsButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BookingsButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+                    <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" 
+                   Text="Appointments" TextColor="#7ABD9A"/>
+
+            <Frame CornerRadius="20" BorderColor="Black" Grid.Row="0" Grid.Column="1">
+                <Image
+                         Source="activity64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ExerciseButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ExerciseButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1" 
+                   Text="Activities" TextColor="#7ABD9A"/>
+
+            <Frame CornerRadius="20" BorderColor="Black" Grid.Row="1" Grid.Column="0">
+                <Image
+                         Source="diary64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="DiaryButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="DiaryButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0"
+                   Text="e-Diary" TextColor="#7ABD9A" />
+
+            <Frame CornerRadius="20" BorderColor="Black" Grid.Row="1" Grid.Column="1">
+                <Image
+                         Source="moody64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="MoodButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="MoodButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="1" Grid.Column="1" 
+                   Text="Mood Tracker" TextColor="#7ABD9A"/>
+
+            <Frame CornerRadius="20" BorderColor="Black" Grid.Row="2" Grid.Column="0">
+                <Image
+                         Source="information64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="InfoButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="InfoButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="2" Grid.Column="0" 
+                   Text="Information" TextColor="#7ABD9A"/>
+
+            <Frame CornerRadius="20" BorderColor="Black" Grid.Row="2" Grid.Column="1">
+                <Image
+                         Source="medication64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="MedicationButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="MedicationButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="2" Grid.Column="1" 
+                   Text="Medication Tracker" TextColor="#7ABD9A"/>
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindOverMobileApp.Views.MoodTracker"
+             BackgroundColor="White">
+    <StackLayout>
+
+        <Label Padding="0" Text="Mood Tracker" TextColor="#7ABD9A" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Title"></Label>
+
+        <Grid RowDefinitions="*" ColumnDefinitions="*,*,*,*,*" Padding="10">
+
+            <Frame CornerRadius="20"  BorderColor="Black" Grid.Row="1" Grid.Column="0">
+                <Image
+                         Source="happy64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GreatButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GreatButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0" 
+                   Text="Great" TextColor="Black"/>
+
+            <Frame CornerRadius="20"  BorderColor="Black" Grid.Row="1" Grid.Column="1">
+                <Image
+                         Source="smile64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoodButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoodButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="1" Grid.Column="1" 
+                   Text="Good" TextColor="Black"/>
+
+            <Frame CornerRadius="20"  BorderColor="Black" Grid.Row="1" Grid.Column="2">
+                <Image
+                         Source="meh64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="NeutralButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="NeutralButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="1" Grid.Column="2" 
+                   Text="Neutral" TextColor="Black"/>
+
+            <Frame CornerRadius="20"  BorderColor="Black" Grid.Row="1" Grid.Column="3">
+                <Image
+                         Source="sad64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BadButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BadButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="1" Grid.Column="3" 
+                   Text="Bad" TextColor="Black"/>
+
+            <Frame CornerRadius="20"  BorderColor="Black" Grid.Row="1" Grid.Column="4">
+                <Image
+                         Source="angry64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AwfulButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="AwfulButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="1" Grid.Column="4" 
+                   Text="Awful" TextColor="Black"/>
+
+        </Grid>
+
+        
+        <Button 
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="Green"
+                BorderWidth="2"
+                CornerRadius="50"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                Text="Log Mood"
+                FontSize="Medium"
+                Clicked="Done_Clicked"
+                Padding="20"
+                    ></Button>
+
+    </StackLayout>
+</ContentPage>

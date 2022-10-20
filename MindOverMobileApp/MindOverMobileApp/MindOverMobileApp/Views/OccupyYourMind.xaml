@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindOverMobileApp.Views.OccupyYourMind">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Ocupy Your Mind"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Green"
+                   FontSize="Title"/>
+
+            <Label Text="Complete some of the following tasks:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"
+                   FontSize="Subtitle"/>
+
+            <Button 
+                VerticalOptions="Center"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="Green"
+                BorderWidth="2"
+                CornerRadius="50"
+                HorizontalOptions="Center"
+                WidthRequest="150"
+                Text="Reset"
+                FontSize="Medium"
+                    ></Button>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="" FontSize="Large" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="puzzleBox" Grid.Row="0" Grid.Column="1" Color="Green"/>
+                <Label Text="Build a puzzle" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="candleBox" Grid.Row="0" Grid.Column="1" Color="Green"/>
+                <Label Text="Light a candle" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="sunsetBox" Grid.Row="0" Grid.Column="1" Color="Green"/>
+                <Label Text="Watch the sunset" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="playlistBox" Grid.Row="0" Grid.Column="1" Color="Green"/>
+                <Label Text="Build a playlist" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="cakeBox" Grid.Row="0" Grid.Column="1" Color="Green"/>
+                <Label Text="Bake a cake/ muffins" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="drawBox" Grid.Row="0" Grid.Column="1" Color="Green"/>
+                <Label Text="Draw a picture" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="callBox" Grid.Row="0" Grid.Column="1" Color="Green"/>
+                <Label Text="Call a friend" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="exploreBox" Grid.Row="0" Grid.Column="1" Color="Green"/>
+                <Label Text="Explore a new place" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="napBox" Grid.Row="0" Grid.Column="1" Color="Green"/>
+                <Label Text="Take a nap" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="cleanBox" Grid.Row="0" Grid.Column="1" Color="Green"/>
+                <Label Text="Clean/ organize a room" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="bathBox" Grid.Row="0" Grid.Column="1" Color="Green"/>
+                <Label Text="Take a bubble bath" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
+
+            <Button 
+                VerticalOptions="Center"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="Green"
+                BorderWidth="2"
+                CornerRadius="50"
+                HorizontalOptions="Center"
+                WidthRequest="150"
+                Text="Done"
+                FontSize="Medium"
+                   Clicked="Done_clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

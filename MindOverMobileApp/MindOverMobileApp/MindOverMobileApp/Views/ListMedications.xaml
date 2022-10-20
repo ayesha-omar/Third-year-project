@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:MindOverMobileApp.ViewModels" 
+             xmlns:model="clr-namespace:MindOverMobileApp.Models"
+             x:Class="MindOverMobileApp.Views.ListMedications"
+             BackgroundColor="White">
+    <ContentPage.BindingContext>
+        <viewmodels:MedicineTrackerViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+
+        <Label Padding="0" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+               Text="List of medications" TextColor="Gray" 
+               FontSize="Title">
+        </Label>
+
+        <Image Source="med64.png"
+                   WidthRequest="100" HorizontalOptions="CenterAndExpand" HeightRequest="100">
+        </Image>
+
+        <Button HorizontalOptions="Center" WidthRequest="200"
+                Text="Add Medication" TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="#7ABD9A" BorderWidth="2" CornerRadius="20"
+                Clicked="AddMed_Clicked">
+        </Button>
+
+        <ListView 
+            CachingStrategy="RecycleElement"
+              BackgroundColor="Transparent"
+              
+              ItemsSource="{Binding Medicine}"
+              HasUnevenRows="true"
+              SeparatorVisibility="None"
+              IsPullToRefreshEnabled="True"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              RefreshCommand="{Binding RefreshCommand}"
+              RefreshControlColor="green"
+              ItemSelected="ListView_ItemSelected"
+              ItemTapped="ListView_ItemTapped">
+
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:Medicine">
+                    <ViewCell >
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="edit" 
+                                      Clicked="MenuItem_edit_Clicked"/>
+                            <MenuItem Text="delete"
+                                      Clicked="MenuItem_delete_Clicked"/>
+
+                        </ViewCell.ContextActions>
+                        <Grid Padding="10">
+                            <Frame CornerRadius="20"
+                               HasShadow="true">
+                                <StackLayout>
+
+                                    <StackLayout >
+                                        <Label VerticalOptions="Center"
+                                     FontSize="Large"
+                                       Text="{Binding NameOfMedicine}"
+                                           TextColor="Green"/>
+                                        <Label VerticalOptions="Center"
+                                     FontSize="Medium"
+                                       Text="{Binding category}"
+                                           TextColor="Green"/>
+                                        <Label VerticalOptions="Center"              
+                                       FontSize="Small"
+                                       Text="{Binding date}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <!--<Label Text="MYSPACE"
+                       FontSize="Large"
+                       Grid.Row="0" 
+                       Grid.Column="0" 
+                       Grid.ColumnSpan="3"
+                       BackgroundColor="Transparent"/>-->
+                </Grid>
+            </ListView.Header>
+            <ListView.Footer>
+                <StackLayout>
+                    <Label Text="Footer"/>
+                </StackLayout>
+            </ListView.Footer>
+
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

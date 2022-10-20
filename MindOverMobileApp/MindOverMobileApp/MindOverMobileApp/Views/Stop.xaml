@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindOverMobileApp.Views.Stop">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Stop, Think, Do"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Green"
+                   FontSize="Title"/>
+
+            <Label Text="STOP:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Green"
+                   FontSize="Medium"/>
+            <Label Text="Use a rubber band around your wrist that you can pull and snap in moments of impulse."
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"/>
+            <Label Text="'Snap' back to reality and draw yourself back to a grounded, stable middle ground."
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"/>
+            <Label Text="Now count to 10, slowly, while slowing your breathing."
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"/>
+            <Label Text="THINK:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Green"
+                   FontSize="Medium"/>
+            <Label Text="Take a moment to think about how you feel, what you want to do next and the consequences of your actions."
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"/>
+            <Label Text="Once you have spent a significant amount of time breaking down the reality of your situation, you would have found a simpler solution."
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"/>
+            <Label Text="DO:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Green"
+                   FontSize="Medium"/>
+            <Label Text="Now carry out your plan in the most suitable, calm and well thought out manner."
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"/>
+            <Label Text="Take your time to understand that whatever you do now is with the best of intentions and remember you are accountable for your behavior."
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"/>
+            <Label Text=""
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Button 
+                VerticalOptions="Center"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="Green"
+                BorderWidth="2"
+                CornerRadius="50"
+                HorizontalOptions="Center"
+                WidthRequest="150"
+                Text="Done"
+                FontSize="Medium"
+                Clicked="Done_Clicked"
+                    ></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

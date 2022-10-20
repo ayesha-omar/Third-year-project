@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindOverMobileApp.Views.MedicationTracker"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+
+            <Grid RowDefinitions="*,*,*,*" ColumnDefinitions="*" Padding="5">
+                <Label Padding="0" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+                       Text="Medication" TextColor="#7ABD9A" FontSize="Title" FontAttributes="Bold"
+                       Grid.Row="0" Grid.Column="0">
+                </Label>
+
+                <Label Padding="0" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+                       Text="Mind over Matter is aware that some students who seek mental health care have been prescribed medical assistance. We would like to help you keep track of your prescription." 
+                       TextColor="Black" FontSize="Default"
+                       Grid.Row="1" Grid.Column="0" IsVisible="true" x:Name="lblDescription">
+                </Label>
+            </Grid>
+
+            <Label Padding="0" HorizontalOptions="CenterAndExpand" 
+                       Text="Have you been prescribed mental health meds?" 
+                       TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"
+                       Grid.Row="2" Grid.Column="0" IsVisible="true" x:Name="lblQuestion">
+            </Label>
+
+            <Grid RowDefinitions="*" ColumnDefinitions="*,*" Padding="5">
+
+                <Button Grid.Row="0" Grid.Column="0"
+                        HeightRequest="50" Text="Yes" TextColor="Black"
+                        BackgroundColor="Transparent"
+                        BorderColor="#7ABD9A" BorderWidth="2" CornerRadius="20"
+                        Clicked="MedYes_Clicked" IsVisible="true" x:Name="btnYes">
+                </Button>
+
+                <Button Grid.Row="0" Grid.Column="1"
+                        HeightRequest="50" Text="No" TextColor="Black"
+                        BackgroundColor="Transparent"
+                        BorderColor="#7ABD9A" BorderWidth="2" CornerRadius="20"
+                        Clicked="MedNo_Clicked" IsVisible="true" x:Name="btnNo">
+                </Button>
+
+            </Grid>
+
+            <Grid RowDefinitions="*" ColumnDefinitions="*" Padding="5">
+                <Image Source="med64.png" Grid.Row="1" Grid.Column="0"
+                   WidthRequest="100" HorizontalOptions="CenterAndExpand" HeightRequest="100">
+                </Image>
+            </Grid>
+
+            <Label Text="Thank you. You are no longer in need of this page"
+                    FontSize="Small" TextColor="Gray" IsVisible="false"
+                   HorizontalOptions="Center" x:Name="MedNoLabel">
+            </Label>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindOverMobileApp.Views.AddMedication"
+             BackgroundColor="White">
+    
+    <StackLayout Padding="20" VerticalOptions="Center" HorizontalOptions="FillAndExpand" >
+
+        <Image Source="med64.png"
+               WidthRequest="100" HeightRequest="200" HorizontalOptions="Center">
+
+        </Image>
+
+        <Entry x:Name="medName" Placeholder="Name of Medication" 
+               TextColor="#7ABD9A" PlaceholderColor="Gray" 
+               HorizontalOptions="Center" WidthRequest="250">
+        </Entry>
+
+        <Entry x:Name="medDoc" Placeholder="Name of Doctor" 
+               TextColor="#7ABD9A" PlaceholderColor="Gray" 
+               HorizontalOptions="Center" WidthRequest="250">
+        </Entry>
+
+        <Picker x:Name="pickCategory" 
+                TextColor="#7ABD9A" 
+                Title="Category of Medication" TitleColor="Gray"
+                HorizontalOptions="Center" WidthRequest="250">
+            <Picker.Items>
+                <x:String>Antidepressants</x:String>
+                <x:String>Anti-Anxiety Medication</x:String>
+                <x:String>Stimulants</x:String>
+                <x:String>Antipsychotics</x:String>
+                <x:String>Mood Stabilizers</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Button
+               VerticalOptions="Center"
+                Text="Save"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="#7ABD9A"
+                BorderWidth="1.5"
+                CornerRadius="50"
+                Clicked="btnSave_Clicked"
+             HorizontalOptions="Center" WidthRequest="250"
+             Command="{Binding RefreshCommand}"/>
+
+        <Button Text="Cancel Entry" Grid.Row="6" Grid.Column="1"
+                Clicked="btnCancel_Clicked"
+                TextColor="Gray"
+                BackgroundColor="Transparent"
+               FontAttributes="Italic"/>
+
+    </StackLayout>
+</ContentPage>

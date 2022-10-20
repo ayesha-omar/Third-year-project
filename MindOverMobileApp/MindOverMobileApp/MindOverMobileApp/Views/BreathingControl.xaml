@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="MindOverMobileApp.Views.BreathingControl">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Breathing Control"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Green"
+                   FontSize="Title"/>
+
+            <Label Text="Use the following video as a breathing exercise. Pause the video where you feel it necessary."
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"
+                   FontSize="Subtitle"/>
+
+            <!--Input video here-->
+            <!-- <mm:VideoView x:Name="videoview" WidthRequest="350" HeightRequest="200" 
+                          IsVisible="true"
+                          VideoAspect="AspectFill"/>
+           
+            Use pause/ play image as an ImageButton to pause and play video below video-->
+            <!--<StackLayout Orientation="Horizontal" Padding="20">
+                <Label x:Name="videoStatus" HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                <Button x:Name="tbnControl" Text="Play" Background="Green" 
+                        HorizontalOptions="EndAndExpand" VerticalOptions="Center"
+                        Clicked="tbnControl_Clicked"/>
+            </StackLayout>-->
+            <!--souce https://sec.ch9.ms/ch9/b721/db937a96-2fc1-4f27-85ce-a04ba510b721/K100.mp4-->
+            <xct:MediaElement x:Name="videoview" BackgroundColor="AliceBlue" Source="https://sec.ch9.ms/ch9/b721/db937a96-2fc1-4f27-85ce-a04ba510b721/K100.mp4" ShowsPlaybackControls="True" HeightRequest="200" WidthRequest="350"/>
+            <Button 
+                VerticalOptions="Center"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="Green"
+                BorderWidth="2"
+                CornerRadius="50"
+                HorizontalOptions="Center"
+                WidthRequest="150"
+                Text="Done"
+                FontSize="Medium"
+                Clicked="btnDone"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindOverMobileApp.Views.PhysicalExercise">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Physical Exercise"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Green"
+                   FontSize="Title"/>
+
+            <Label Text="Please capture evidence of exercise completion."
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"
+                   FontSize="Subtitle"/>
+
+            <Label Text="Go for a run/ jog/ walk (10 - 30 minutes)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"
+                   FontSize="Small"/>
+
+            <Image Source="users.png" 
+                   Grid.Row="0" Grid.Column="0" 
+                   WidthRequest="100" 
+                   HeightRequest="100"></Image>
+
+            <Button 
+                VerticalOptions="Center"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="Green"
+                BorderWidth="2"
+                CornerRadius="50"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                Text="Upload image"
+                FontSize="Medium"
+                    ></Button>
+
+            <Label Text="Do some yoga/ meditate (10 - 30 minutes)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"
+                   FontSize="Small"/>
+
+            <Image Source="users.png" 
+                   Grid.Row="0" Grid.Column="0" 
+                   WidthRequest="100" 
+                   HeightRequest="100"></Image>
+
+            <Button 
+                VerticalOptions="Center"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="Green"
+                BorderWidth="2"
+                CornerRadius="50"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                Text="Upload image"
+                FontSize="Medium"
+                    ></Button>
+
+            <Label Text="Go for a bike ride/ gym (10 - 30 minutes)"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"
+                   FontSize="Small"/>
+
+            <Image Source="users.png" 
+                   Grid.Row="0" Grid.Column="0" 
+                   WidthRequest="100" 
+                   HeightRequest="100"></Image>
+
+            <Button 
+                VerticalOptions="Center"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="Green"
+                BorderWidth="2"
+                CornerRadius="50"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                Text="Upload image"
+                FontSize="Medium"
+                
+                    ></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

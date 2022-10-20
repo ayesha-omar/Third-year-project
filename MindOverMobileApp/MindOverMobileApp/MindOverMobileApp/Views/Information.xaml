@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindOverMobileApp.Views.Information"
+             BackgroundColor="White">
+
+    <ScrollView>
+    
+        <StackLayout Padding="15">
+
+            <Label Padding="5" Text="What is Mind over Matter?" TextColor="#7ABD9A" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Title"></Label>
+
+            <Label HorizontalOptions="Center" FontSize="Default"
+                   Grid.Row="1" Grid.Column="0"
+                   Text="Mental health includes our emotional, psychological, 
+                   and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make healthy choices." 
+                   TextColor="Black"/>
+
+            <Image Source="background.png" HeightRequest="150"/>
+
+            <Label HorizontalOptions="Center" FontSize="Default"
+                   Grid.Row="2" Grid.Column="0"
+                   Text="The University of Johannesburg aids students by means of psychological services ie. psycad. Psycad offers theraputic consultations to students struggling with their mental health. Mind/ Matter is an online platform of psycad and allows students to use these applications to progress in their mental
+                   and emotional state. UJ has identified the need for improved psychological interaction with those who do not have a means to valid coping mechanisms. " 
+                   TextColor="Black"/>
+
+            <Image Source="whatismom.png" />
+
+            <Label Padding="5" Text="How to use Mind over Matter" TextColor="#7ABD9A" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Title"></Label>
+
+            <Label HorizontalOptions="Center" FontSize="Default"
+                   Grid.Row="1" Grid.Column="0"
+                   Text="The Calendar icon on your home page is where you will have access to theraputic consultation bookings made with a psycad counsellor." 
+                   TextColor="Black"/>
+
+            <Label HorizontalOptions="Center" FontSize="Default"
+                   Grid.Row="1" Grid.Column="0"
+                   Text="The Activity icon on your home page is where you will have access to appropriate coping mechanisms to manage your conditions. These activities may be prescribed by your counsellor.." 
+                   TextColor="Black"/>
+
+            <Label HorizontalOptions="Center" FontSize="Default"
+                   Grid.Row="1" Grid.Column="0"
+                   Text="The Diary icon on your home page is where you will have access to a personal electronic journal for you to keep track of your daily thoghts, experiences and emotions." 
+                   TextColor="Black"/>
+
+            <Label HorizontalOptions="Center" FontSize="Default"
+                   Grid.Row="1" Grid.Column="0"
+                   Text="The Medication icon on your home page is where you will have access to medically approved reminders to take your mental health meds if you require the feature." 
+                   TextColor="Black"/>
+
+            <Label HorizontalOptions="Center" FontSize="Default"
+                   Grid.Row="1" Grid.Column="0"
+                   Text="The Information icon on your home page is where you will have access to a detailed description of psycad and Mind over Matter." 
+                   TextColor="Black"/>
+
+            <Label HorizontalOptions="Center" FontSize="Default"
+                   Grid.Row="1" Grid.Column="0"
+                   Text="The Question mark icon on your home page is where you are right now, these are the instructions you will have to follow in order to use Mind over Matter." 
+                   TextColor="Black"/>
+
+            <Image Source="background.png"/>
+
+        </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>

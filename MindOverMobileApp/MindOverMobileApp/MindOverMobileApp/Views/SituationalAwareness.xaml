@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MindOverMobileApp.Views.SituationalAwareness">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Situational Awareness"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Green"
+                   FontSize="Title"/>
+
+                <Label Text="Name 5 things you can see:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"
+                   FontSize="Small"/>
+
+                <Editor BackgroundColor="#e6e3e3" 
+                        HeightRequest="140" 
+                        Placeholder="Type your list here" 
+                        TextColor="ForestGreen" 
+                        PlaceholderColor="DarkGray"></Editor>
+
+                <Label Text="Name 4 things you can touch:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"
+                   FontSize="Small"/>
+
+                <Editor BackgroundColor="#e6e3e3" 
+                        HeightRequest="120" 
+                        Placeholder="Type your list here" 
+                        TextColor="ForestGreen" 
+                        PlaceholderColor="DarkGray"></Editor>
+
+                <Label Text="Name 3 things you can hear:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"
+                   FontSize="Small"/>
+
+                <Editor BackgroundColor="#e6e3e3" 
+                        HeightRequest="100" 
+                        Placeholder="Type your list here" 
+                        TextColor="ForestGreen" 
+                        PlaceholderColor="DarkGray"></Editor>
+
+                <Label Text="Name 2 things you can smell:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"
+                   FontSize="Small"/>
+
+                <Editor BackgroundColor="#e6e3e3" 
+                        HeightRequest="80" 
+                        Placeholder="Type your list here" 
+                        TextColor="ForestGreen" 
+                        PlaceholderColor="DarkGray"></Editor>
+
+                <Label Text="Name 1 thing you can taste:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="Black"
+                   FontSize="Small"/>
+
+                <Editor BackgroundColor="#e6e3e3" 
+                        HeightRequest="60" 
+                        Placeholder="Type your list here" 
+                        TextColor="ForestGreen" 
+                        PlaceholderColor="DarkGray"></Editor>
+
+                <Button 
+                VerticalOptions="Center"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="Green"
+                BorderWidth="2"
+                CornerRadius="50"
+                HorizontalOptions="Center"
+                WidthRequest="150"
+                Text="Done"
+                FontSize="Medium"
+                 Clicked="Done_Exercise_clicked"
+                    ></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

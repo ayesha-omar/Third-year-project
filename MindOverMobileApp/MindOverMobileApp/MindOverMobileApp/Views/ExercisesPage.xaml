@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:MindOverMobileApp.ViewModels" 
+             xmlns:model="clr-namespace:MindOverMobileApp.Models"
+             x:Class="MindOverMobileApp.Views.ExercisesPage"
+             x:DataType="viewmodels:ExercisesViewModel"
+             BackgroundColor="White">
+
+    <!--<StackLayout>
+
+        <Label Padding="0" Text="Activities" TextColor="#7ABD9A" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Title"></Label>
+        <Image Source="MoM_Logo_nobg.png"/>
+
+        <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*" Padding="10">
+
+            <Frame CornerRadius="20"  BorderColor="Black" Grid.Row="0" Grid.Column="0">
+                <Image
+                         Source="breathing64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BreathingButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BreathingButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" 
+                   Text="Breathing Control" TextColor="#7ABD9A"/>
+
+            <Frame CornerRadius="20" BorderColor="Black" Grid.Row="0" Grid.Column="1">
+                <Image
+                         Source="exercise64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PhysicalButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="PhysicalButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1" 
+                   Text="Physical Exercise" TextColor="#7ABD9A"/>
+
+            <Frame CornerRadius="20" BorderColor="Black" Grid.Row="1" Grid.Column="0">
+                <Image
+                         Source="checklist64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OccupyButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OccupyButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0"
+                   Text="Occupy your Mind" TextColor="#7ABD9A" />
+
+            <Frame CornerRadius="20" BorderColor="Black" Grid.Row="1" Grid.Column="1">
+                <Image
+                         Source="stop64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="StopButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="StopButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="1" Grid.Column="1" 
+                   Text="Stop, Think, Do" TextColor="#7ABD9A"/>
+
+            <Frame CornerRadius="20" BorderColor="Black" Grid.Row="2" Grid.Column="0">
+                <Image
+                         Source="selfawareness64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SituationalButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SituationalButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="2" Grid.Column="0" 
+                   Text="Situational Awareness" TextColor="#7ABD9A"/>
+
+            <Frame CornerRadius="20" BorderColor="Black" Grid.Row="2" Grid.Column="1">
+                <Image
+                         Source="moody64.png" BackgroundColor="Transparent"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="MoodButton_Clicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="MoodButton_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Label HorizontalOptions="Center" FontSize="Small" FontAttributes="Bold" 
+                   BackgroundColor="Transparent" Grid.Row="2" Grid.Column="1" 
+                   Text="Mood Tracker" TextColor="#7ABD9A"/>
+
+        </Grid>
+
+    </StackLayout>-->
+
+
+    <ContentPage.BindingContext>
+        <viewmodels:ExercisesViewModel/>
+    </ContentPage.BindingContext>
+
+    
+    <ListView CachingStrategy="RecycleElement"
+              BackgroundColor="Transparent"
+              
+              ItemsSource="{Binding Exercise}"
+              HasUnevenRows="true"
+              SeparatorVisibility="None"
+              IsPullToRefreshEnabled="True"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              RefreshCommand="{Binding RefreshCommand}"
+              RefreshControlColor="green"
+              ItemSelected="ListView_ItemSelected"
+              ItemTapped="ListView_ItemTapped">
+
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="model:Exercise">
+                <ViewCell >
+                    <ViewCell.ContextActions>
+                        <MenuItem Text="Favorite"/>
+                        <MenuItem Text="Edit"/>
+                        <MenuItem Text="properties"/>
+
+                    </ViewCell.ContextActions>
+                    <Grid Padding="10">
+                        <Frame CornerRadius="20"
+                               HasShadow="true"
+                               BorderColor="Black">
+                            <StackLayout>
+
+                                <StackLayout >
+
+                                    <Label Text="{Binding Exercise_Name}"
+                                    VerticalOptions="Center" 
+                                    HorizontalOptions="Center" 
+                                    TextColor="Black"
+                                    FontSize="Subtitle"/>
+                                    <Label VerticalOptions="Center"
+                                     FontSize="Small"
+                                       Text="{Binding IsItPrescribed}"
+                                           TextColor="Green"/>
+                                    <Image Source="{Binding MediaPath}" 
+                                    Grid.Row="0" Grid.Column="0" 
+                                    WidthRequest="50" 
+                                    HeightRequest="50"
+                                    BackgroundColor="White"/>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        <ListView.Header>
+            <StackLayout>
+                <Label Padding="0" Text="Activities" TextColor="#7ABD9A" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Title"></Label>
+            </StackLayout>
+        </ListView.Header>
+       <!-- <ListView.Footer>
+            <StackLayout>
+                <Label Text="Footer"/>
+            </StackLayout>
+        </ListView.Footer>-->
+
+    </ListView>
+</ContentPage>
